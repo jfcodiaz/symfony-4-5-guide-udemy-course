@@ -1,4 +1,104 @@
 {
+    "composer/package-versions-deprecated": {
+        "version": "1.11.99.1"
+    },
+    "doctrine/annotations": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "a2759dd6123694c8d901d0ec80006e044c2e6457"
+        },
+        "files": [
+            "config/routes/annotations.yaml"
+        ]
+    },
+    "doctrine/cache": {
+        "version": "1.10.2"
+    },
+    "doctrine/collections": {
+        "version": "1.6.7"
+    },
+    "doctrine/common": {
+        "version": "2.13.3"
+    },
+    "doctrine/dbal": {
+        "version": "2.13.0"
+    },
+    "doctrine/deprecations": {
+        "version": "v0.5.3"
+    },
+    "doctrine/doctrine-bundle": {
+        "version": "1.6",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.6",
+            "ref": "3a397f067ed879190d6c5bfa903efd7050a96e5a"
+        },
+        "files": [
+            "config/packages/doctrine.yaml",
+            "config/packages/prod/doctrine.yaml",
+            "src/Entity/.gitignore",
+            "src/Repository/.gitignore"
+        ]
+    },
+    "doctrine/doctrine-cache-bundle": {
+        "version": "1.4.0"
+    },
+    "doctrine/doctrine-migrations-bundle": {
+        "version": "2.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.2",
+            "ref": "baaa439e3e3179e69e3da84b671f0a3e4a2f56ad"
+        },
+        "files": [
+            "config/packages/doctrine_migrations.yaml",
+            "migrations/.gitignore"
+        ]
+    },
+    "doctrine/event-manager": {
+        "version": "1.1.1"
+    },
+    "doctrine/inflector": {
+        "version": "1.4.3"
+    },
+    "doctrine/instantiator": {
+        "version": "1.4.0"
+    },
+    "doctrine/lexer": {
+        "version": "1.2.1"
+    },
+    "doctrine/migrations": {
+        "version": "3.0.1"
+    },
+    "doctrine/orm": {
+        "version": "2.7.5"
+    },
+    "doctrine/persistence": {
+        "version": "1.3.8"
+    },
+    "doctrine/reflection": {
+        "version": "1.2.2"
+    },
+    "jdorn/sql-formatter": {
+        "version": "v1.2.17"
+    },
+    "laminas/laminas-code": {
+        "version": "4.1.0"
+    },
+    "laminas/laminas-eventmanager": {
+        "version": "3.3.1"
+    },
+    "laminas/laminas-zendframework-bridge": {
+        "version": "1.2.0"
+    },
+    "ocramius/proxy-manager": {
+        "version": "2.11.1"
+    },
     "psr/cache": {
         "version": "1.0.1"
     },
@@ -37,6 +137,9 @@
         "version": "v4.2.12"
     },
     "symfony/dependency-injection": {
+        "version": "v4.2.12"
+    },
+    "symfony/doctrine-bridge": {
         "version": "v4.2.12"
     },
     "symfony/dotenv": {
@@ -88,8 +191,14 @@
     "symfony/http-kernel": {
         "version": "v4.2.12"
     },
+    "symfony/orm-pack": {
+        "version": "v2.1.0"
+    },
     "symfony/polyfill-mbstring": {
         "version": "v1.22.1"
+    },
+    "symfony/proxy-manager-bridge": {
+        "version": "v4.2.12"
     },
     "symfony/routing": {
         "version": "4.2",
@@ -105,10 +214,37 @@
             "config/routes.yaml"
         ]
     },
+    "symfony/stopwatch": {
+        "version": "v4.2.12"
+    },
+    "symfony/twig-bridge": {
+        "version": "v4.2.12"
+    },
+    "symfony/twig-bundle": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "7e5381cd17e0e27d1b432af9230b65060b75ac4c"
+        },
+        "files": [
+            "config/packages/test/twig.yaml",
+            "config/packages/twig.yaml",
+            "config/routes/dev/twig.yaml",
+            "templates/base.html.twig"
+        ]
+    },
     "symfony/var-exporter": {
         "version": "v4.2.12"
     },
     "symfony/yaml": {
         "version": "v4.2.12"
+    },
+    "twig/twig": {
+        "version": "v2.14.4"
+    },
+    "webimpress/safe-writer": {
+        "version": "2.1.0"
     }
 }
