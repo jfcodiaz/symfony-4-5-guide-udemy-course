@@ -130,7 +130,9 @@ RUN go get github.com/mailhog/mhsendmail
 RUN cp /root/go/bin/mhsendmail /usr/bin/mhsendmail
 RUN echo 'sendmail_path = /usr/bin/mhsendmail --smtp-addr mailhog:1025' > /usr/local/etc/php/php.ini
 
-WORKDIR "/root/repository"
+RUN wget https://get.symfony.com/cli/installer -O - | bash &&  mv /root/.symfony/bin/symfony /usr/local/bin/symfony
+
+WORKDIR "/root/repository/code"
 
 EXPOSE 80
 ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
