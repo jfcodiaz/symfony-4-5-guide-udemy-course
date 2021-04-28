@@ -2,18 +2,37 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
+
+    /**
+     * @Route("/create-users", name="create-users")
+     */
+    public function craeteUsers() 
+    {
+        $users = ['Adam', 'Robert', 'John', 'Susan'];
+        $entityManager = $this->getDoctrine()->getManager();
+        foreach ($users as $userName) {
+            $user = new User;
+            $user->setName($userName);            
+            $entityManager->persist($user);
+        }
+
+        $entityManager->flush();
+        return $this->redirectToRoute('default');
+    }
+    
     /**
      * @Route("/", name="default")
      */
     public function index(): Response
     {
-        $users = ['Adam', 'Robert', 'John', 'Susan'];
+        $users = $this->getDoctrine()->getRepository(User::class)->findAll();
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
             'users' => $users
