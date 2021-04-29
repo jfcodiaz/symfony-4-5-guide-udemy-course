@@ -33,9 +33,13 @@ class DefaultController extends AbstractController
     public function index(): Response
     {
         $users = $this->getDoctrine()->getRepository(User::class)->findAll();
+
+        $gifts = ['flowers', 'car', 'piano', 'money'];
+        shuffle($gifts);
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
-            'users' => $users
+            'users' => $users,
+            'random_gift' => $gifts
         ]);
     }
 }
