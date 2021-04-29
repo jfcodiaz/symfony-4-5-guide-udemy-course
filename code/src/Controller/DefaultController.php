@@ -10,6 +10,9 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
+    public function __construct(GiftsService $gifts) {
+        $gifts->setGifts(['pencil', 'book', 'clock', 'balloon']);
+    }
 
     /**
      * @Route("/create-users", name="create-users")

@@ -10,10 +10,11 @@ class GiftsService {
         shuffle($this->gifts);
     }
 
-    public function setGift($gift) {
-        $this->gift = $gift;
+    public function setGifts($gifts) {
+        $this->gifts = $gifts;
+        shuffle($this->gifts);
     }
-    
+
     public function __invoke() {
         return $this->gifts;
     }
