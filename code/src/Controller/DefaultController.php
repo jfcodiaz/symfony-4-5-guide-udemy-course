@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Services\GiftsService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -30,16 +31,13 @@ class DefaultController extends AbstractController
     /**
      * @Route("/", name="default")
      */
-    public function index(): Response
+    public function index(GiftsService $gifts): Response
     {
         $users = $this->getDoctrine()->getRepository(User::class)->findAll();
-
-        $gifts = ['flowers', 'car', 'piano', 'money'];
-        shuffle($gifts);
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
             'users' => $users,
-            'random_gift' => $gifts
+            'random_gift' => $gifts()
         ]);
     }
 }
