@@ -132,6 +132,17 @@ RUN echo 'sendmail_path = /usr/bin/mhsendmail --smtp-addr mailhog:1025' > /usr/l
 
 RUN wget https://get.symfony.com/cli/installer -O - | bash &&  mv /root/.symfony/bin/symfony /usr/local/bin/symfony
 
+ENV NVM_DIR /root/.nvm
+ENV NODE_VERSION 10.16.3
+
+RUN mkdir /root/.nvm \
+	&& curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash \
+	&& chmod +x $HOME/.nvm/nvm.sh \
+	&& . $HOME/.nvm/nvm.sh && nvm install $NODE_VERSION && nvm alias default $NODE_VERSION && nvm use default && npm install -g npm \
+	&& ln -sf /root/.nvm/versions/node/v$NODE_VERSION/bin/node /usr/bin/nodejs \
+	&& ln -sf /root/.nvm/versions/node/v$NODE_VERSION/bin/node /usr/bin/node \
+	&& ln -sf /root/.nvm/versions/node/v$NODE_VERSION/bin/npm /usr/bin/npm 
+
 WORKDIR "/root/repository/code"
 
 EXPOSE 80
