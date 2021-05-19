@@ -21,3 +21,8 @@
 node_modules
 public/assets/css/dashboard.css
 public/assets/css/login.css
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###
